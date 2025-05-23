@@ -14,6 +14,12 @@
     "body-parser": "^1.20.3",
     "bootstrap": "^5.3.3",
     "ejs": "^3.1.10",
-    "express": "^4.21.0"
+    "express": "^4.21.0",
+    "pg": "^8.15.1"
+  },
+  "devDependencies": {
+    "ejs-loader": "^0.5.0",
+    "webpack": "^5.97.1",
+    "webpack-cli": "^5.1.4"
   }
 }

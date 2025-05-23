@@ -1,17 +1,31 @@
-html{ 
+
+html {
     background: linear-gradient(100deg, rgb(214, 167, 244), rgb(178, 75, 225));
+
+  min-height: 1000px;
+  font-family: "helvetica neue";
 }
 
-.header{
-    margin-left: 40px;
-    margin-top: 10px;
+body {
     display: flex;
-    justify-content: flex-start;
-    width: 100%;
-    flex-direction: row;
-    text-decoration: none;
-    gap: 40px;
-} 
+    flex-direction: column;
+    justify-content: stretch;
+    height: 95vh;
+}
+ 
+main {
+    text-align: center;
+    flex: 1 0 auto;
+    padding-top: 50px;
+  }
+
+
+nav.header{
+    position: absolute;
+    left: 45px;
+    top: 40px;
+    gap: 30px;
+}
 
 .header a {
     text-decoration: none; 
@@ -19,78 +33,64 @@ html{
 }
 
 
+.headingBox{
+    
+    margin: 30px auto; 
 
-body{
-    margin:0px;
-
-    height: 100vh;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-main{
-    padding-top: 50px;
-    height: calc(90vh - 70px); 
-   width: 100%;
-}
-
-.completed{
-    text-decoration: line-through;
-    color:#7049b2;
-   
-}
-
-ul{
-
-    list-style-type: none;
-    margin: 0;
-}
-
-ul li{
-    background-color: #fff;
-    flex-direction: column;
-    height: 60px;
-    width: 321px;
-    margin-right: 35px;
-    box-shadow: 3px 5px 5px rgb(61, 60, 60);
-}
-
-  .box{
-    margin-top: 100px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    max-width: 300px;
+ 
+    box-shadow: 5px 5px 5px rgb(30, 30, 30); 
+    background-color: #7049b2;
+    border-radius: 5px; 
     text-align: center;
-    margin-bottom: 40px;
-   
+    margin-bottom: 10px; 
 }
-.item{
-    display: flex;
-    flex-direction:column;
-   align-items: center;
-    width: 100%;
-  }
-
+ 
 
 h1{
     padding: 10px 20px;
-    margin-top: -25px;
     font-size: 2em;
     color: #fff;
-    background-color: #7049b2;
-    border-radius: 5px;
-    box-shadow: 5px 5px 5px rgb(30, 30, 30);
 }
 
-input[type='text']{
+
+  
+div.Box{
+    background-color: #fff;
+    margin: 50px auto;
+   border-radius: 5px;
+    max-width: 400px;
+    box-shadow: 3px 5px 5px rgb(61, 60, 60);
+  }
+
+
+div.item{
+    display: flex;
+    align-items: center;
+    min-height: 70px;
+    border-bottom: 1px solid #d7d6d6;
+}
+
+p {
+    font-size: 20px;
+}
+
+form[action="/add"] input[type="text"]{
     font-size: larger;
     text-align: center;
-    width: 260px;
-    border:0px;
+    outline: none;
+    width: 85%;
+    border:0;
     border-radius: 5px 0px 0px 5px;
- 
+}
+
+form[action="/m-add"] input[type="text"]{
+  font-size: larger;
+  text-align: center;
+  outline: none;
+  width: 85%;
+  border:0;
+  border-radius: 5px 0px 0px 5px;
 }
 
  button{
@@ -103,26 +103,62 @@ input[type='text']{
   border-radius: 50%;
   font-family: sans-serif;
   font-weight: bold;
+  cursor: pointer;
 }
 
-form{
+.delBtn{
+    color: #706f7253;
+    background-color: #fff;
+    height: 50px;
+    width: 50px;
+    border-radius: 50px;
+    font-size:x-large;
+}
+
+.delBtn:hover{
+  color: #767676;
+  cursor: pointer;
+}
+
+.task-form{
     display: flex;
     margin:0px 0px 12px 5px;
     background-color: #fff;
-    border-radius: 0px 0px 5px 5px;
-    box-shadow: 3px 5px 5px rgb(61, 60, 60);
+    border-radius: 5px;
     height: 60px;  
-     /* border-bottom: 1px solid #7049b2; */
 }
+
+
+
+.delForm{
+    display: flex;
+    margin-left: auto;
+    background-color: #ffffff;
+    box-shadow: 0;
+    height: 60px; 
+    align-items: center; 
+}
+
+button.edit{
+    color: #7049b2;
+    background-color: #fff;
+}
+
+.editInput{
+    font-size: larger;
+    text-align: left;
+    outline: none;
+    width: 70%;
+    border:0;
+}
+
 
  input[type="checkbox"]{
     margin: 20px;
     
 } 
 
-ul li:first-child{
-    border-radius: 5px 5px  0px 0px;
-}
+
 
 .task-item {
     display: inline-block;
@@ -132,12 +168,9 @@ ul li:first-child{
 
 
 
-.yesBorder {
- border-radius: 5px;
-  }
-
   footer{
-    color:inherit
+    color:inherit;
+    text-align: center;
   }
 
   div.anc{
@@ -146,16 +179,7 @@ ul li:first-child{
     gap: 30px;
   }
 
-  .remove-btn{
-    font-size: x-large;
-    font-weight: 100;
-    color: #afaeb0;
-    background-color: #fff;
-  }
-
-  .remove-btn:hover{
-    color: rgb(63, 62, 62);
-  }
+ 
 
   
 
