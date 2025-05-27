@@ -6,14 +6,15 @@ import dotenv from "dotenv";
 dotenv.config();
 
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 const db = new pg.Client({
     user: process.env.DB_USER,
     password: process.env.DB_PASSWORD,
     host: process.env.DB_HOST,
     database: process.env.DB_NAME,
-    port: process.env.DB_PORT
+    port: process.env.DB_PORT,
+    ssl: { rejectUnauthorized: false } 
   });
   db.connect();
 
@@ -125,7 +126,7 @@ app.post("/m-delete", async (req, res) =>{
   await db.query('delete from monthlyitems where id = $1',[deletedId]);
   res.redirect('/Month');
   } catch(err){
-    console.log
+    console.log(err);
   }
 });
 
